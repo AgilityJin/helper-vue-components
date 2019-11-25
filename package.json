@@ -1,0 +1,27 @@
+{
+  "name": "helper-vue-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:AgilityJin/helper-vue-components.git",
+  "author": "AgilityJin <Agility_Jin@outlook.com>",
+  "license": "MIT",
+  "scripts": {
+    "commit": "git cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.1.0"
+  }
+}
