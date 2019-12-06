@@ -1,12 +1,32 @@
 {
-  "name": "helper-vue-components",
+  "name": "@helper-gdp/components",
   "version": "1.0.0",
-  "main": "index.js",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
+  "main": "dist/helper-components.cjs.js",
+  "module": "dist/helper-components.esm.js",
+  "typings": "dist/types/main.d.ts",
   "license": "MIT",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "commit": "git cz"
+    "clean": "rimraf dist",
+    "doc": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "test": "jest --coverage",
+    "release": "standard-version",
+    "dev": "cross-env NODE_ENV=development rollup -c -w rollup.config.js",
+    "build": "npm run clean && cross-env NODE_ENV=production rollup -c rollup.config.js",
+    "commit": "git cz",
+    "lint": "eslint --ext .vue,.ts,.js --ignore-path ../../.gitignore src",
+    "fix": "eslint --fix --ext .vue,.ts,.js --ignore-path ../../.gitignore src"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "config": {
     "commitizen": {
@@ -21,7 +41,44 @@
   "devDependencies": {
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.149",
+    "@types/prosemirror-model": "^1.7.2",
+    "@types/prosemirror-state": "^1.2.3",
+    "@types/prosemirror-view": "^1.11.2",
+    "@typescript-eslint/eslint-plugin": "^2.10.0",
+    "@typescript-eslint/parser": "^2.10.0",
+    "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^3.0.2",
-    "husky": "^3.1.0"
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.0.1",
+    "husky": "^3.1.0",
+    "jest": "^24.9.0",
+    "jest-config": "^24.9.0",
+    "postcss-assets": "^5.0.0",
+    "postcss-inline-svg": "^4.1.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.27.8",
+    "rollup-plugin-analyzer": "^3.2.2",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-sourcemaps": "^0.4.2",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "rollup-plugin-vue": "^5.1.4",
+    "standard-version": "^7.0.1",
+    "ts-jest": "^24.2.0",
+    "typedoc": "^0.15.3",
+    "vue": "^2.6.10",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "cross-env": "^6.0.3"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
   }
 }
