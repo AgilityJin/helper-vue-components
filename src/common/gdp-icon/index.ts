@@ -1,1 +1,7 @@
-export default './gdp-icon.vue'
+import GdpIcon from './gdp-icon.vue'
+
+export {
+  GdpIcon
+}
+
+export default GdpIcon

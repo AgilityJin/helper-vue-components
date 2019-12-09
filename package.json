@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
-  "main": "dist/helper-components.cjs.js",
-  "module": "dist/helper-components.esm.js",
+  "main": "dist/helper-gdp-components.es.js",
   "typings": "dist/types/main.d.ts",
+  "style": "dist/helper-gdp-components.css",
   "license": "MIT",
   "files": [
     "dist"

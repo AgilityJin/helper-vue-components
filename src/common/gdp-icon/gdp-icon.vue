@@ -1,9 +1,22 @@
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-  name: 'test',
+<script>
+export default {
+  name: 'gdp-icon',
   render(h) {
-    return h('div', 'test')
+    return h('div', {
+      class: {
+        'gdp-test': 'gdp-test'
+      },
+      domProps: {
+        innerHTML: 'test module components'
+      }
+    })
   }
-})
+}
 </script>
+
+<style lang="scss" scoped>
+.gdp-test {
+  color: red;
+  transform: scale(.5);
+}
+</style>

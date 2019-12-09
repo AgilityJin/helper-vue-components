@@ -1,1 +1,1 @@
-export { default as GdpIcon } from './gdp-icon'
+export {default as GdpIcon} from './gdp-icon'

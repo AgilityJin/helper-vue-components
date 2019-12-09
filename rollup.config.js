@@ -85,8 +85,16 @@ function entry(input, output) {
 
 export default [
   entry('src/main.ts', [
-    { file: pkg.main, name: libraryName, format: 'cjs', sourcemap: process.env.NODE_ENV !== 'production' },
-    { file: pkg.module, format: 'es', sourcemap: process.env.NODE_ENV !== 'production' }
+    {
+      file: pkg.main,
+      name: libraryName,
+      format: 'es',
+      globals: {
+        vue: 'vue'
+      },
+      sourcemap: process.env.NODE_ENV !== 'production'
+    },
+    // { file: pkg.module, format: 'es', sourcemap: process.env.NODE_ENV !== 'production' }
   ])
 ]
 
