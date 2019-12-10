@@ -1,4 +1,4 @@
-import GdpIcon from './gdp-icon.vue'
+import GdpIcon from './index.vue'
 
 export {
   GdpIcon

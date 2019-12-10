@@ -1,6 +1,10 @@
 /**
  * Created by Jaron Long on 2019/10/21
  */
+const fs = require('fs')
+const path = require('path')
+const flattenDeep = require('lodash/flattenDeep')
+
 import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import sourceMaps from 'rollup-plugin-sourcemaps'
@@ -15,7 +19,7 @@ import assets from 'postcss-assets'
 import inlineSvg from 'postcss-inline-svg'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import cssnano from 'cssnano'
-import pkg from './package.json'
+// import pkg from './package.json'
 
 const libraryName = 'HelperGdpComponents'
 
@@ -48,7 +52,8 @@ function entry(input, output) {
       resolve(),
       vue({ css: false }),
       postcss({
-        extract: 'dist/helper-gdp-components.css',
+        extract: 'dist/index.css', // 'dist/index.css'
+        exec: true,
         plugins: [
           inlineSvg(),
           assets({
@@ -83,15 +88,41 @@ function entry(input, output) {
   }
 }
 
+function removeArrayElement(sourceArr, key) {
+  if (!sourceArr || !(sourceArr instanceof Array) || !key || typeof key !== 'string') return sourceArr
+  const source = JSON.parse(JSON.stringify(sourceArr))
+  const index = source.indexOf(key)
+  if (index !== -1) {
+    source.splice(index, 1)
+  }
+  return source
+}
+
+let entryArr = fs.readdirSync(path.join(__dirname, 'src'))
+entryArr = removeArrayElement(entryArr, 'main.ts')
+entryArr = removeArrayElement(entryArr, 'interface')
+
+let allEntry = []
+allEntry = entryArr && entryArr.map(item => {
+  let dir = fs.readdirSync(path.join(__dirname, 'src', item))
+  dir = removeArrayElement(dir, 'index.ts')
+  dir = dir.map(el => path.join(__dirname, 'src', item, el, el + '.ts'))
+  return dir
+}) || []
+allEntry.push('src/main.ts')
+allEntry = flattenDeep(allEntry)
+
 export default [
-  entry('src/main.ts', [
+  entry(allEntry, [
     {
-      file: pkg.main,
+      dir: 'dist',
       name: libraryName,
       format: 'es',
       globals: {
         vue: 'vue'
       },
+      chunkFileNames: 'bundle/chunk.[format].[hash].js',
+      entryFileNames: '[name].js',
       sourcemap: process.env.NODE_ENV !== 'production'
     },
     // { file: pkg.module, format: 'es', sourcemap: process.env.NODE_ENV !== 'production' }

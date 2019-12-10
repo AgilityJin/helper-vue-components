@@ -7,14 +7,14 @@ export default {
         'gdp-test': 'gdp-test'
       },
       domProps: {
-        innerHTML: 'test module components'
+        innerHTML: 'test icon module components'
       }
     })
   }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .gdp-test {
   color: red;
   transform: scale(.5);

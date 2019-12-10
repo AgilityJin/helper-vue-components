@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
-  "main": "dist/helper-gdp-components.es.js",
+  "main": "dist/main.js",
   "typings": "dist/types/main.d.ts",
-  "style": "dist/helper-gdp-components.css",
+  "style": "dist/index.css",
   "license": "MIT",
   "files": [
     "dist"
@@ -48,6 +48,7 @@
     "@types/prosemirror-view": "^1.11.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
+    "autoprefixer": "^9.7.3",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.7.2",
