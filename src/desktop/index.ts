@@ -1,1 +1,1 @@
-export {default as GdpDesktopText} from './text/text'
+export { GdpDesktopText } from './text/text'
