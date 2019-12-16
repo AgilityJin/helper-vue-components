@@ -1,0 +1,31 @@
+block($name, $domain = lc) {
+  $block-context = '%s-%s' % ($domain $name)
+  modifier($modifier-name) {
+    // Override the element definition within modifier scope.
+    element($element-name, $top-block-context = $block-context) {
+      & {
+        .{$top-block-context}__{$element-name} {
+          {block}
+        }
+      }
+    }
+    / &_{$modifier-name} {
+      {block}
+    }
+  }
+
+  element($name) {
+    modifier($modifier-name) {
+      / &_{$modifier-name} {
+        {block}
+      }
+    }
+    / .{$block-context}__{$name} {
+      {block}
+    }
+  }
+
+  / .{$block-context} {
+    {block}
+  }
+}

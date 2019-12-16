@@ -1,1 +1,1 @@
-export { GdpMobileButton } from './button/button'
+export default {}

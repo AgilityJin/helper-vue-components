@@ -3,23 +3,24 @@
   "version": "1.0.0",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
-  "main": "dist/main.js",
-  "typings": "dist/types/main.d.ts",
-  "style": "dist/index.css",
+  "main": "lib/main.js",
+  "style": "lib/main.css",
+  "typings": "lib/types/main.d.ts",
   "license": "MIT",
   "files": [
-    "dist"
+    "lib"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "doc": "typedoc --out docs --target es6 --theme minimal --mode file src",
+    "clean": "rimraf lib",
     "test": "jest --coverage",
     "release": "standard-version",
     "dev": "cross-env NODE_ENV=development rollup -c -w rollup.config.js",
     "build": "npm run clean && cross-env NODE_ENV=production rollup -c rollup.config.js",
     "commit": "git cz",
     "lint": "eslint --ext .vue,.ts,.js --ignore-path ../../.gitignore src",
-    "fix": "eslint --fix --ext .vue,.ts,.js --ignore-path ../../.gitignore src"
+    "fix": "eslint --fix --ext .vue,.ts,.js --ignore-path ../../.gitignore src",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -47,8 +48,8 @@
     "@types/prosemirror-state": "^1.2.3",
     "@types/prosemirror-view": "^1.11.2",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
-    "@typescript-eslint/parser": "^2.10.0",
-    "autoprefixer": "^9.7.3",
+    "@typescript-eslint/parser": "^2.11.0",
+    "babel-plugin-import": "^1.13.0",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^3.0.2",
     "eslint": "^6.7.2",
@@ -61,8 +62,11 @@
     "postcss-inline-svg": "^4.1.0",
     "rimraf": "^3.0.0",
     "rollup": "^1.27.8",
+    "rollup-plugin-alias": "^2.2.0",
     "rollup-plugin-analyzer": "^3.2.2",
+    "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-chunks": "^1.2.3",
     "rollup-plugin-json": "^4.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.0",
@@ -73,9 +77,11 @@
     "rollup-plugin-vue": "^5.1.4",
     "standard-version": "^7.0.1",
     "ts-jest": "^24.2.0",
-    "typedoc": "^0.15.3",
+    "typescript": "^3.7.3",
     "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue-property-decorator": "^8.3.0",
+    "vue-template-compiler": "^2.6.10",
+    "vuepress": "^1.2.0"
   },
   "dependencies": {
     "cross-env": "^6.0.3"
