@@ -1,5 +1,5 @@
 <template>
-  <div v-if="value" @click="clickOverlay" :style="overlayStyle" class="lc-overlay">
+  <div v-if="value" @click="clickOverlay" :style="overlayStyle" class="gdp-overlay">
     <slot />
   </div>
 </template>
@@ -10,7 +10,7 @@ import { VueConstructor } from 'vue'
 import { Show } from '@/mixins'
 
 @Component
-export default class LcOverlay extends Mixins(Show) {
+export default class GdpOverlay extends Mixins(Show) {
   @Prop({type: Number, default: 1}) zIndex?: number = 1
   @Prop({type: Number, default: .7}) opacity?: number = .7
 
