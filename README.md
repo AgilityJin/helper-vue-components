@@ -4,12 +4,12 @@
 
 ## 使用方式
 
-* `yarn add [package_name]`安装npm package
+* `yarn add @helper-gdp/components`安装npm package
 
 ### 全量引用
 
-* `import allComponents from '[package_name]'` 引入所有组件
-* `import '[package_name]/lib/main.css'` 引入所有样式
+* `import allComponents from '@helper-gdp/components'` 引入所有组件
+* `import '@helper-gdp/components/lib/main.css'` 引入所有样式
 * `Vue.use(allComponents)` 注册所有组件
 
 ### 按需加载
@@ -19,17 +19,17 @@
 
   ```JavaScript
   ['import', {
-      libraryName: '[package_name]',
+      libraryName: '@helper-gdp/components',
       style: (name) => `${name}.css`
-    }, '[package_name]']
+    }, '@helper-gdp/components']
   ```
 
-* `import { ComponentName } from '[package_name]'` 按需加载指定组件
+* `import { ComponentName } from '@helper-gdp/components'` 按需加载指定组件
 * `Vue.use(ComponentName)` 注册指定组件
 
 ### Tips
 
-* 当前全量引用与按需引用互斥,配置babel后则只能采取按需加载,如仍需导入全量可通过`import { main } from '[package_name]'`获取全量导出的内容
+* 当前全量引用与按需引用互斥,配置babel后则只能采取按需加载,如仍需导入全量可通过`import { main } from '@helper-gdp/components'`获取全量导出的内容
 
 ## src目录说明
 
@@ -44,14 +44,14 @@
 
 ## 新增组件方法
 
-* 根据组件实用性在common/desktop/mobile/modules新建组件目录
+* 根据组件适用性在 common/desktop/mobile/modules 对应目录下新建组件目录
 * 新建与目录同名的ts文件入口
 * 所有样式遵循bem规范,通过调用styles下的bem文件内的方法可快捷选择bem块
 
   ```stylus
-    +block(name) // 选中块级元素 ${domain}-name
-      +element(el) // 选中元素 ${domain}-name__el
-        +modifier(modif) // 选中修饰性元素 ${domain}-name__el_modif
+    +block(name) // 选中块级元素 gdp-name
+      +element(el) // 选中元素 gdp-name__el
+        +modifier(modif) // 选中修饰性元素 gdp-name__el_modif
   ```
 
 ## 组件文档
