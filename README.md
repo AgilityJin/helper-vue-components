@@ -34,7 +34,7 @@
 ## src目录说明
 
 * assets
-  * style 样式文件夹
+  * styles 样式文件夹
 * interface 接口定义目录
 * mixins 通用混入定义
 * common 跨端组件
@@ -67,3 +67,28 @@
 * `yarn run commit` 提交暂存的代码更改
 * `yarn run docs:dev` 编辑文档
 * `yarn run docs:build` 构建文档
+
+## 需求
+
+### common
+
+* [ ] icon p0
+  * [ ] 支持用户配置自身项目的svg统一图标目录
+  * [ ] 支持使用网络图片
+  * [ ] 支持svg颜色控制
+  * [ ] 支持容器样式细粒度控制
+
+### mobile
+
+* [ ] dailog p3
+
+### desktop
+
+### modules
+
+### other
+
+* [ ] 提供 vue transition name 的style p0
+  * [ ] 渐隐渐现
+  * [ ] 由小到大
+  * [ ] 由大到小
