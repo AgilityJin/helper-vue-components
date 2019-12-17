@@ -27,6 +27,12 @@
 * `import { ComponentName } from '@helper-gdp/components'` 按需加载指定组件
 * `Vue.use(ComponentName)` 注册指定组件
 
+### 直接引用
+
+* `import ComponentName from '@helper-gdp/components/lib/componentName'` 直接导入指定组件
+* `import ComponentName from '@helper-gdp/components/lib/componentName.css'` 导入指定组件样式
+* `Vue.use(ComponentName)` 注册指定组件
+
 ### Tips
 
 * 当前全量引用与按需引用互斥,配置babel后则只能采取按需加载,如仍需导入全量可通过`import { main } from '@helper-gdp/components'`获取全量导出的内容
@@ -73,7 +79,7 @@
 ### common
 
 * [ ] icon p0
-  * [ ] 支持用户配置自身项目的svg统一图标目录
+  * [ ] 支持用户配置自身项目的svg统一图标目录,通过name来指定icon key
   * [ ] 支持使用网络图片
   * [ ] 支持svg颜色控制
   * [ ] 支持容器样式细粒度控制
