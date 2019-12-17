@@ -30,7 +30,7 @@
 ### 直接引用
 
 * `import ComponentName from '@helper-gdp/components/lib/componentName'` 直接导入指定组件
-* `import ComponentName from '@helper-gdp/components/lib/componentName.css'` 导入指定组件样式
+* `import '@helper-gdp/components/lib/componentName.css'` 导入指定组件样式
 * `Vue.use(ComponentName)` 注册指定组件
 
 ### Tips
