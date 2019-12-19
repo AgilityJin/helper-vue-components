@@ -1,16 +1,18 @@
 <template>
-  <div v-if="value" @click="clickOverlay" :style="overlayStyle" class="gdp-overlay">
-    <slot />
-  </div>
+  <transition name="fade">
+    <div v-if="value" @click="clickOverlay" :style="overlayStyle" class="lc-overlay">
+      <slot />
+    </div>
+  </transition>
 </template>
 
 <script lang="ts">
 import { Component, Vue, Mixins, Prop } from 'vue-property-decorator';
 import { VueConstructor } from 'vue'
-import { Show } from '@/mixins'
+import { Show } from '../../mixins'
 
 @Component
-export default class GdpOverlay extends Mixins(Show) {
+export default class LcOverlay extends Mixins(Show) {
   @Prop({type: Number, default: 1}) zIndex?: number = 1
   @Prop({type: Number, default: .7}) opacity?: number = .7
 
@@ -26,6 +28,7 @@ export default class GdpOverlay extends Mixins(Show) {
 
 <style lang="stylus" scoped>
 @import '../../assets/styles/_bem';
+@import '../../assets/styles/transition';
 +block(overlay)
   position fixed
   width 100%
