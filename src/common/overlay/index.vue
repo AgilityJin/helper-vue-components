@@ -11,7 +11,9 @@ import { Component, Vue, Mixins, Prop } from 'vue-property-decorator';
 import { VueConstructor } from 'vue'
 import { Show } from '../../mixins'
 
-@Component
+@Component({
+  name: 'lc-overlay'
+})
 export default class LcOverlay extends Mixins(Show) {
   @Prop({type: Number, default: 1}) zIndex?: number = 1
   @Prop({type: Number, default: .7}) opacity?: number = .7

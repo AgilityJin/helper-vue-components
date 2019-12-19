@@ -116,7 +116,7 @@ function entry(input, output) {
     ].concat(process.env.NODE_ENV === 'production'
       ? [
         // Minify
-        // terser(), // TODO: 压缩后组件name获取不正确,导致无法正确注册组件
+        terser(),
         analyze({
           summaryOnly: true
         })

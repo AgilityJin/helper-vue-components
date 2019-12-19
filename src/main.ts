@@ -21,7 +21,7 @@ const install = (Vue: VueConstructor) => {
     if (components.hasOwnProperty(key)) {
       // @ts-ignore
       const component = components[key];
-      Vue.component(component.name, component)
+      Vue.use(component)
     }
   }
 }
