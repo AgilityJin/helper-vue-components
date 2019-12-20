@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="value" @click="clickOverlay" :style="overlayStyle" class="lc-overlay">
+    <div v-if="isShow" @click="clickOverlay" :style="overlayStyle" class="lc-overlay">
       <slot />
     </div>
   </transition>
@@ -15,8 +15,8 @@ import { Show } from '../../mixins'
   name: 'lc-overlay'
 })
 export default class LcOverlay extends Mixins(Show) {
-  @Prop({type: Number, default: 1}) zIndex?: number = 1
-  @Prop({type: Number, default: .7}) opacity?: number = .7
+  @Prop({type: Number, default: 1000}) readonly zIndex!: number
+  @Prop({type: Number, default: .7}) readonly opacity!: number
 
   overlayStyle = {
     zIndex: this.zIndex,

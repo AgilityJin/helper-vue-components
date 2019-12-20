@@ -49,6 +49,7 @@ function entry(input, output) {
       }),
       // Compile TypeScript files
       typescript({
+        tsconfig: './tsconfig.json',
         verbosity: 2,
         tsconfigDefaults: {
           extendedDiagnostics: process.env.NODE_ENV === 'production'

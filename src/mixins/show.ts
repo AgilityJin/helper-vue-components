@@ -7,7 +7,7 @@ import { Component, Prop, Watch, Vue } from 'vue-property-decorator';
  * @extends {Vue}
  */
 @Component
-class Show extends Vue {
+export default class Show extends Vue {
   @Prop({type: Boolean, default: false}) value: boolean = false
   isShow = this.value
   @Watch('value')
@@ -31,5 +31,3 @@ class Show extends Vue {
     this.close();
   }
 }
-
-export default Show

@@ -1,11 +1,18 @@
-import { VueConstructor } from 'vue'
 import Overlay from './index.vue'
+import {
+  IExportComponent,
+  VueConstructor,
+  IDecoratorVue
+} from '../../interface'
 import '@/assets/styles/normalize.styl';
 
-// @ts-ignore
-Overlay.install = (Vue: VueConstructor) => {
-  // @ts-ignore
-  Vue.component(Overlay.options.name, Overlay)
+const name = (Overlay as IDecoratorVue).options.name
+const component: IExportComponent = {
+  install: (Vue: VueConstructor) => {
+    Vue.component(name, Overlay)
+  },
+  name,
+  component: Overlay
 }
 
-export default Overlay
+export default component

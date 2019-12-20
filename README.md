@@ -25,17 +25,13 @@
   ```
 
 * `import { ComponentName } from '@helper-gdp/components'` 按需加载指定组件
-* `Vue.use(ComponentName)` 注册指定组件
+* `Vue.use(ComponentName)` or `Vue.component(ComponentName.name, ComponentName.component)` 注册指定组件
 
 ### 直接引用
 
 * `import ComponentName from '@helper-gdp/components/lib/componentName'` 直接导入指定组件
 * `import '@helper-gdp/components/lib/componentName.css'` 导入指定组件样式
-* `Vue.use(ComponentName)` 注册指定组件
-
-### Tips
-
-* 当前全量引用与按需引用互斥,配置babel后则只能采取按需加载,如仍需导入全量可通过`import { main } from '@helper-gdp/components'`获取全量导出的内容
+* `Vue.use(ComponentName)` or `Vue.component(ComponentName.name, ComponentName.component)` 注册指定组件
 
 ## src目录说明
 
@@ -70,6 +66,11 @@
 * `yarn run dev` 热更新打包代码
 * `yarn run test` 执行测试
 * `yarn run release` 生成发布变更记录
+  * `-- --release-as major` 大更新
+  * `-- --release-as minor` 较小且向下兼容的
+  * `-- --release-as patch` 补丁程序
+  * `-- --prerelease alpha` 标记为alpha 内测版本
+  * `-- --prerelease beta` 标记为beta 公测版本
 * `yarn run commit` 提交暂存的代码更改
 * `yarn run docs:dev` 编辑文档
 * `yarn run docs:build` 构建文档
@@ -89,6 +90,9 @@
   * 元素操作权限控制 => 由当前directive控制,鉴权函数及用户角色由使用方指定,通过鉴权返回boolean,支持控制模式的更改,例如隐藏或禁用,禁用时支持控制元素亮度
   * 接口请求权限控制 => 由请求拦截器负责
 
+* [ ] popup 弹出层
+  * 支持四个方向及居中弹出
+
 ### mobile
 
 * [ ] dailog p3
@@ -100,9 +104,8 @@
 ### other
 
 * [ ] 提供 vue transition name 的style p0
-  * [ ] 渐隐渐现
-  * [ ] 由小到大
-  * [ ] 由大到小
+  * [x] 渐隐渐现
+  * [ ] 缩放
 
 ### fix
 

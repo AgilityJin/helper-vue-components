@@ -5,13 +5,17 @@ import * as Mobile from './mobile'
 import * as Desktop from './desktop'
 import * as Modules from './modules'
 
+export * from './common'
+export * from './mobile'
+export * from './desktop'
+export * from './modules'
+
 const components = {
   ...Common,
   ...Mobile,
   ...Desktop,
   ...Modules
 }
-if('default' in components) delete components.default; // 存在则删除
 
 // 安装所有组件
 const install = (Vue: VueConstructor) => {
