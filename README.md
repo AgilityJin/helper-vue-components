@@ -60,6 +60,16 @@
 
 通过vuepress在docs目录内维护
 
+## 发布库
+
+1. 确认npm源正确
+2. 确认登录账号正确
+3. 合并最新代码至master 并切换至master
+4. 发布命令为`yarn run release -- --release-as [major/minor/patch]` 根据更新程度决定采用的的release as值
+5. 如果为内测或公测版本则执行`yarn run release -- --release-as [major/minor/patch] --prerelease [alpha/beta]`
+6. `git push --follow-tags origin master` 推送到远程分支
+7. `yarn publish` or `yarn publish --tag [alpha/beta]` 执行发布
+
 ## cli
 
 * `yarn run build` 打包代码
