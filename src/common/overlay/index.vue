@@ -1,29 +1,36 @@
 <template>
   <transition name="fade">
-    <div v-if="isShow" @click="clickOverlay" :style="overlayStyle" class="lc-overlay">
+    <div v-if="isShow" @click="clickOverlay" :style="overlayStyle" class="hp-overlay">
       <slot />
     </div>
   </transition>
 </template>
 
 <script lang="ts">
-import { Component, Vue, Mixins, Prop } from 'vue-property-decorator';
 import { VueConstructor } from 'vue'
+import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
 import { Show } from '../../mixins'
 
 @Component({
-  name: 'lc-overlay'
+  name: 'hp-overlay'
 })
-export default class LcOverlay extends Mixins(Show) {
-  @Prop({type: Number, default: 1000}) readonly zIndex!: number
-  @Prop({type: Number, default: .7}) readonly opacity!: number
+export default class Overlay extends Mixins(Show) {
+  // 层级关系
+  @Prop({type: Number, default: 100}) zIndex?: number
+  // 透明度
+  @Prop({type: Number, default: .3}) opacity?: number
+  // 是否点击关闭
+  @Prop({type: Boolean, default: true}) clickClose?: boolean
 
   overlayStyle = {
     zIndex: this.zIndex,
     backgroundColor: `rgba(0, 0, 0, ${this.opacity})`
   }
+
   clickOverlay() {
-    this.close();
+    if(this.clickClose) {
+      this.close();
+    }
   }
 }
 </script>
@@ -31,6 +38,7 @@ export default class LcOverlay extends Mixins(Show) {
 <style lang="stylus" scoped>
 @import '../../assets/styles/_bem';
 @import '../../assets/styles/transition';
+
 +block(overlay)
   position fixed
   width 100%

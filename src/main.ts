@@ -16,6 +16,7 @@ const components = {
   ...Desktop,
   ...Modules
 }
+delete components.default
 
 // 安装所有组件
 const install = (Vue: VueConstructor) => {

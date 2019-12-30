@@ -1,6 +1,6 @@
 {
-  "name": "@helper-gdp/components",
-  "version": "1.0.0",
+  "name": "@helper-gdp/vue-components",
+  "version": "1.1.5",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
   "main": "lib/main.js",
@@ -14,13 +14,13 @@
     "clean": "rimraf lib",
     "test": "jest --coverage",
     "release": "standard-version",
-    "dev": "cross-env NODE_ENV=development rollup -c -w rollup.config.js",
-    "build": "npm run clean && cross-env NODE_ENV=production rollup -c rollup.config.js",
+    "dev": "cross-env NODE_ENV=development rollup -w -c build/rollup.config.js",
+    "build": "npm run clean && cross-env NODE_ENV=production rollup -c build/rollup.config.js",
     "commit": "git cz",
     "lint": "eslint --ext .vue,.ts,.js --ignore-path ../../.gitignore src",
     "fix": "eslint --fix --ext .vue,.ts,.js --ignore-path ../../.gitignore src",
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs": "vuepress build docs"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -78,15 +78,15 @@
     "standard-version": "^7.0.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "vue-property-decorator": "^8.3.0",
-    "vue-template-compiler": "^2.6.10",
+    "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.2.0"
   },
   "dependencies": {
     "cross-env": "^6.0.3"
   },
   "peerDependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.11"
   }
 }

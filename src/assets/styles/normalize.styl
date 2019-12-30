@@ -1,5 +1,58 @@
+@charset "utf-8";
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: 0;
+}
+
 html,
 body {
   margin: 0;
   padding: 0
+}
+
+ul,
+li,
+ol {
+  list-style: none;
+}
+
+i {
+  font-style: normal;
+}
+
+/* 移除input[type=number]加减号 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+	-webkit-appearance: none !important;
+	margin: 0;
+}
+
+button {
+  border: 0;
+  outline: none;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -moz-user-focus: none;
+  -moz-user-select: none;
+  text-decoration: none;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  zoom: 1;
 }

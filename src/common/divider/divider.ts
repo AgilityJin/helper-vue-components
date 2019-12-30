@@ -1,4 +1,4 @@
-import Overlay from './index.vue'
+import Divider from './index.vue'
 import {
   VueConstructor,
   PluginObject
@@ -6,13 +6,13 @@ import {
 import '../../assets/styles/normalize.styl';
 
 // @ts-ignore
-const COMP_NAME = Overlay.options.name
+const COMP_NAME = Divider.options.name
 const component: PluginObject<any> = {
   install: (Vue: VueConstructor) => {
-    Vue.component(COMP_NAME, Overlay)
+    Vue.component(COMP_NAME, Divider)
   },
   name: COMP_NAME,
-  component: Overlay
+  component: Divider
 }
 
 export default component
