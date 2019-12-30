@@ -1,6 +1,6 @@
 # @helper-gdp/vue-components
 
-> 渠道系统 vue 基础组件库
+> helper gdp小组 vue 基础组件库
 
 ## 获取项目说明及使用文档
 

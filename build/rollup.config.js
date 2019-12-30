@@ -23,7 +23,7 @@ import babel from 'rollup-plugin-babel';
 import alias from 'rollup-plugin-alias'; // 路径别名
 import css from 'rollup-plugin-css-chunks'; // 分包
 
-const libraryName = 'AmsVueComponents'
+const libraryName = 'helperGdpVueComponents'
 
 function entry(input, output) {
   return {
