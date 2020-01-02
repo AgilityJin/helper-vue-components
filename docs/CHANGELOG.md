@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.6](https://github.com/AgilityJin/helper-vue-components/compare/v1.1.5...v1.1.6) (2020-01-02)
+
+
+### Features
+
+* **overlay popup:** 新增支持背景层滚动控制&修复lib包不正确问题 ([985424e](https://github.com/AgilityJin/helper-vue-components/commit/985424ee17c147838bb490da0cf85037d6d0a0a4))
+
 ### 1.1.5 (2019-12-30)
 
 

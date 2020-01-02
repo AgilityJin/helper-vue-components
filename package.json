@@ -1,6 +1,6 @@
 {
   "name": "@helper-gdp/vue-components",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "repository": "git@github.com:AgilityJin/helper-vue-components.git",
   "author": "AgilityJin <Agility_Jin@outlook.com>",
   "main": "lib/main.js",
