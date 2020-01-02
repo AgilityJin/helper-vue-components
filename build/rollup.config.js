@@ -42,7 +42,7 @@ function entry(input, output) {
         entries: [
           {
             find: '@',
-            replacement: __dirname + '../src'
+            replacement: path.join(__dirname, '../src')
           }
         ]
       }),

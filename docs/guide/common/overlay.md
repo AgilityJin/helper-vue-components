@@ -22,6 +22,7 @@ v-model | 当前组件是否显示 | `boolean` | `false` | 1.1.5
 zIndex | 组件层级 | `number` | `100` | 1.1.5
 opacity | 遮罩层透明度 | `number` | `.3` | 1.1.5
 clickClose | 组件是否可点击关闭 | `boolean` | `true` | 1.1.5
+notScroll | 是否不要背景滚动 | `boolean` | `true` | 1.1.8
 
 ### Events
 

@@ -25,6 +25,7 @@ position | 弹出层位置 | `'left' | 'right' | 'top' | 'bottom' | 'center'` | 
 background | 弹出层背景色 | `string` | `#FFFFFF` | 1.1.5
 borderRadius | 弹出层边框圆角 | `string` | `8px` | 1.1.5
 maxWidthOrHeight | 最大宽度或最大高度 | `string` | `80%` | 1.1.5
+notScroll | 是否不要背景滚动 | `boolean` | `true` | 1.1.8
 
 ### Events
 

@@ -16,13 +16,13 @@ export default class Show extends Vue {
   @Prop({type: Boolean, default: false}) readonly value?: boolean
 
   @Watch('value')
-  valueChange(val: boolean) {
+  __valueChange(val: boolean) {
     if (val === this.isShow) return
     const type = val ? 'open' : 'close'
     this[type]();
   }
   @Watch('isShow')
-  isShowChange(val: boolean) {
+  __isShowChange(val: boolean) {
     if (val === this.value) return
     const type = val ? 'open' : 'close'
     this[type]();

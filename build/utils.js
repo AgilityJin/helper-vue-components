@@ -32,7 +32,6 @@ function getAllEntry() {
   }) || []
   allEntry.push(path.join(__dirname, '../src/main.ts'))
   allEntry = flattenDeep(allEntry)
-  console.log(allEntry)
   return allEntry
 }
 

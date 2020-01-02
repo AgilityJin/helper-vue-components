@@ -9,12 +9,12 @@
 <script lang="ts">
 import { VueConstructor } from 'vue'
 import { Component, Vue, Prop, Mixins } from 'vue-property-decorator'
-import { Show } from '../../mixins'
+import { Show, Scroll } from '../../mixins'
 
 @Component({
   name: 'hp-overlay'
 })
-export default class Overlay extends Mixins(Show) {
+export default class Overlay extends Mixins(Show, Scroll) {
   // 层级关系
   @Prop({type: Number, default: 100}) zIndex?: number
   // 透明度
@@ -31,6 +31,15 @@ export default class Overlay extends Mixins(Show) {
     if(this.clickClose) {
       this.close();
     }
+  }
+
+  openedCallback() {
+    this.disableScroll()
+  }
+
+  closedCallback(Done: () => void) {
+    this.enableScroll()
+    Done();
   }
 }
 </script>

@@ -1,13 +1,15 @@
 <template>
   <div class="hp-popup">
-    <hp-overlay v-model="isShow" :click-close="clickClose" />
+    <hp-overlay :not-scroll="notScroll" v-model="isShow" :click-close="clickClose" />
     <transition :name="'popup-' + position">
       <div v-show="isShow" :style="{
         background,
         zIndex,
         ...popupStyles
       }" class="hp-popup__box">
-        <slot/>
+        <div class="hp-popup__slot">
+          <slot/>
+        </div>
       </div>
     </transition>
   </div>
@@ -36,6 +38,8 @@ export default class Popup extends Mixins(Show) {
   @Prop({type: String, default: '8px'}) borderRadius?: string
   // 最大宽度或最大高度
   @Prop({type: String, default: '80%'}) maxWidthOrHeight?: string
+  // 是否禁止滚动
+  @Prop({type: Boolean, default: true}) notScroll?: boolean
 
   get popupStyles() {
     switch (this.position) {
@@ -103,4 +107,8 @@ export default class Popup extends Mixins(Show) {
     max-width 100%
     max-height 100%
     overflow hidden
+  +element(slot)
+    width 100%
+    height 100%
+    overflow auto
 </style>

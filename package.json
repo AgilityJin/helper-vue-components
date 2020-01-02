@@ -13,7 +13,7 @@
   "scripts": {
     "clean": "rimraf lib",
     "test": "jest --coverage",
-    "release": "standard-version",
+    "release": "standard-version --infile docs/CHANGELOG.md",
     "dev": "cross-env NODE_ENV=development rollup -w -c build/rollup.config.js",
     "build": "npm run clean && cross-env NODE_ENV=production rollup -c build/rollup.config.js",
     "commit": "git cz",
@@ -74,7 +74,7 @@
     "rollup-plugin-sourcemaps": "^0.4.2",
     "rollup-plugin-terser": "^5.1.2",
     "rollup-plugin-typescript2": "^0.25.3",
-    "rollup-plugin-vue": "^5.1.4",
+    "rollup-plugin-vue": "5.1.1",
     "standard-version": "^7.0.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.3",

@@ -79,12 +79,22 @@ module.exports = {
         },
       ],
       '/': [
-        '',
+        {
+          title: '@helper-gdp/vue-components',
+          path: '/',
+          sidebarDepth: 2,
+          collapsable: false,
+        },
+        {
+          title: '更新日志',
+          path: '/CHANGELOG',
+          sidebarDepth: 2,
+        },
       ]
     },
     sidebarDepth: 2,
     repoLabel: 'GitHub',
-    repo: 'git@github.com:AgilityJin/helper-vue-components',
+    repo: 'https://github.com/AgilityJin/helper-vue-components',
     smoothScroll: true,
   }
 }
